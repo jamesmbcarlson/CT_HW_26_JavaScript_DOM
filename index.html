@@ -1,0 +1,81 @@
+<!--
+    James Carlson
+    Coding Temple - SE FT-144
+    Frontend, Module 10 Lesson 5 Assignment: JavaScript and the Document Object Model DOM
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="./main.js" defer></script>
+    <title>JavaScript and the Document Object Model DOM</title>
+  </head>
+
+  <body style="background-color: cornflowerblue">
+
+    <!-- 1. Document Manipulation with JavaScript -->
+    <div class="conainter p-4 m-5 rounded" style="background-color: aliceblue;">
+        <div class="row col-12 text-center">
+            <h2 class="my-5">Our Cool Products!</h2>
+        </div>
+        <div class="d-flex justify-content-around row g-4 mb-5" id="catalogue"></div>
+    </div>
+
+    <!-- 2. Form Manipulation with JavaScript -->
+    <div class="conainter p-4 m-5 rounded" style="background-color: aliceblue;">
+        <div class="row col-12 text-center">
+            <h2 class="my-5">Our Cool Form!</h2>
+        </div>
+        <form class="row g-3 p-4 border rounded shadow bg-light" onsubmit="storeUserInput(event)">
+            <div class="col-md-6">
+                <label for="formname" class="form-label">Name</label>
+                <input type="text" name='name' class="form-control" id="formname" autocomplete="name">
+            </div>
+            <div class="col-md-6">
+                <label for="formemail" class="form-label">Email</label>
+                <input type="email" name='email' class="form-control" id="formemail" autocomplete="email">
+            </div>
+            <div class="col-12">
+                <label for="formmessage" class="form-label">Message</label>
+                <textarea name='message' class="form-control" id="formmessage"></textarea>
+            </div>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <p id="confirm-submit" class="my-4"></p>
+            </div>
+        </form>
+    </div>
+
+    <!-- 3. Styling with JavaScript -->
+    <div class="conainter p-4 m-5 rounded text-center" style="background-color: aliceblue;">
+        <div class="row col-12">
+            <h2 class="my-5">Our Cool Buttons 'n' Stuff!</h2>
+        </div>
+        <div id="color-change" class="d-flex justify-content-center align-items-center rounded" style="background-color: white; height: 100px; margin-bottom: 20px;"">
+            <button class="btn btn-primary" onclick="changeColor('color-change')" >Click Me to Change Color!</button>
+        </div>
+        <div  class="d-flex justify-content-center align-items-center" style="height: 100px;"">
+            <button id="hover-here" class="btn btn-primary" onmouseover="changeColor('hover-here')" >Hover Over Me!</button>
+        </div>
+        <div  class="d-flex align-items-center" style="height: 100px;"">
+            <button id="move-away" class="btn btn-primary" onmouseout="moveAway()">Hover OFF Me!</button>
+        </div>
+        <div  class="d-flex justify-content-center align-items-center" style="height: 100px;"">
+            <input id="copy-box" oncopy="textCopied()" value="Try to copy this text!">
+        </div>
+        <div  class="d-flex justify-content-center align-items-center" style="height: 100px;"">
+            <input id="upper-box" onkeyup="textToUpper()" placeholder="type in lowercase">
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  </body>
+</html>
